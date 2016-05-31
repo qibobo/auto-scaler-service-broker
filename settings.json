@@ -1,0 +1,10 @@
+{
+	"port":3000,
+
+	"postgresql_host": "localhost",
+	"postgresql_port": 5443,
+	"postgresql_username": "postgre",
+	"postgresql_password":"123",
+	
+	"loggerLevel" : "INFO"
+}
