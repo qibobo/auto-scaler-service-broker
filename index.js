@@ -6,8 +6,8 @@ var bodyParser = require('body-parser');
 // this will let us get the data from a POST
 var port = process.env.PORT || 8080;
 log4js.configure('log4js.json');
-var catalog = {"service":"autoscaler"};
-//var catalog = JSON.parse(fs.readFileSync('catalog.json', 'utf8'));
+// var catalog = {"service":"autoscaler"};
+var catalog = JSON.parse(fs.readFileSync('catalog.json', 'utf8'));
 var settings = JSON.parse(fs.readFileSync('settings.json', 'utf8'));
 
 var logger = log4js.getLogger('autoscaler');
