@@ -1,0 +1,17 @@
+{
+	"port":8080, 
+	
+	"service_id": "autoscaler-guid",
+	"service_name": "autoscaler",
+	"service_description":"Automatically increase or decrease the number of application instances based on a policy you define.",
+  	"plan_id":"autoscaler-free-plan-id",
+  	"plan_name":"autoscaler-free-plan",
+  	"plan_description":"This is the free service plan for the Auto-Scaling service.",
+	
+	"postgresql_host": "localhost",
+	"postgresql_port": 5443,
+	"postgresql_username": "postgre",
+	"postgresql_password":"123",
+	
+	"loggerLevel" : "INFO"
+}

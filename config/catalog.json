@@ -1,0 +1,13 @@
+{
+	"services": [{
+		"id": "service-guid",
+		"name": "service-name",
+		"description": "service-description",
+		"bindable": true,
+		"plans": [{
+			"id": "plan-guid",
+			"name": "plan-name",
+			"description": "plan-description"
+		}]
+	}]
+}

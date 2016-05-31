@@ -1,0 +1,18 @@
+{
+  "devDependencies": {
+    "body-parser": "^1.15.1",
+    "chai": "^3.5.0",
+    "express": "^4.13.4",
+    "log4js": "^0.6.36",
+    "mocha": "^2.5.3",
+    "pg": "^4.5.5",
+    "should": "^9.0.0",
+    "supertest": "^1.2.0"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "test-ut": "mocha test/ut --recursive",
+    "test-fat": "mocha test/fat --recursive",
+    "runFAT": "npm run start & npm run test-fat &"
+  }
+}
