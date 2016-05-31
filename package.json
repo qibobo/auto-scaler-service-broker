@@ -11,8 +11,8 @@
   },
   "scripts": {
     "start": "node index.js",
-    "test-ut": "mocha test/ut --recursive",
     "test-fat": "mocha test/fat --recursive",
+    "runUT": "mocha test/ut --recursive",
     "runFAT": "npm run start & npm run test-fat &"
   }
 }
