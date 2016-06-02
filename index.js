@@ -13,9 +13,7 @@ app.use(bodyParser.json());
 
 var router = express.Router();
 router.get('/catalog', function(req, res) {
-   api.getCatalog(function(data){
-    res.json(data);
-    });
+	res.json(api.getCatalog());
 });
 
 app.use('/v2', router);
