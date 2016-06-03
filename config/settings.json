@@ -9,9 +9,10 @@
   	"plan_description":"This is the free service plan for the Auto-Scaling service.",
 	
 	"postgresql_host": "localhost",
-	"postgresql_port": 5443,
-	"postgresql_username": "postgre",
+	"postgresql_port": 5433,
+	"postgresql_username": "postgres",
 	"postgresql_password":"123",
+	"postgresql_dbName":"bindingDB",
 	
 	"loggerLevel" : "INFO"
 }
