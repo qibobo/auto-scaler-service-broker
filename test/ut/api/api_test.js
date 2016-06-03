@@ -1,8 +1,8 @@
 var fs = require('fs');
 var path = require('path');
 var should = require('should');
-var api = new require( path.join (__dirname, '/../../../api/api.js'))();
-var settings = JSON.parse(fs.readFileSync( path.join (__dirname, '/../../../config/settings.json'), 'utf8'));
+var api = new require( path.join (__dirname, '../../../lib/api/api.js'))();
+var settings = JSON.parse(fs.readFileSync( path.join (__dirname, '../../../config/settings.json'), 'utf8'));
 
 
 describe('Unit Test for API', function() {

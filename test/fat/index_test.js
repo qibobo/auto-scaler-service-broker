@@ -10,7 +10,7 @@ var server = supertest.agent("http://localhost:"+port);
 
 // UNIT test begin
 
-describe("API test suite",function(){
+describe("RESTful API test suite",function(){
 
   it("should return catalog json",function(done){
 

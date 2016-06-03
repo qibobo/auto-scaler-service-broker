@@ -1,0 +1,6 @@
+#!/bin/bash
+set -e
+npm run start &
+
+mocha test/fat --recursive
+ps -ef | grep -v "grep" | grep "index.js" | awk '{print $2}' | xargs -I {}  kill -9 {} 

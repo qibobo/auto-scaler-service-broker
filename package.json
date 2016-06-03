@@ -1,4 +1,18 @@
 {
+  "name": "auto-scaler-service-broker",
+  "description": "autoscaler-service-broker",
+  "version": "1.0.0",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "bin": {
+    "mocha": "./bin/mocha",
+    "_mocha": "./bin/_mocha"
+  },
+  "dependencies": {
+    "eslint": "^2.11.1"
+  },
   "devDependencies": {
     "body-parser": "^1.15.1",
     "chai": "^3.5.0",
@@ -10,9 +24,15 @@
     "supertest": "^1.2.0"
   },
   "scripts": {
-    "start": "node index.js",
+    "bootstrap": "npm install eslint mocha -g && mocha init test",
+    "lint": "eslint lib",
+    "start": "node lib/index.js",
+    "test": "mocha test/ut --recursive",
     "test-fat": "mocha test/fat --recursive",
-    "runUT": "mocha test/ut --recursive",
-    "runFAT": "npm run start & npm run test-fat &"
+    "watch-test": "mocha test/ut --recursive --watch",
+    "watch-test-fat": "mocha test/fat --recursive --watch",
+    "package": "./bin/cfpack/cfpack"
+  
   }
+
 }
