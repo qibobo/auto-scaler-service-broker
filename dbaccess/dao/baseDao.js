@@ -12,6 +12,7 @@ var queryType = {
 	count : "count"
 };
 BaseDao.prototype.add = function(entity, entityType, callback){
+		console.log(entity.toString() + "\n");
 		if(!(entity instanceof entityType)){
 			callback(new Response(false, "Input object is not a instance of Binding" , null));			
 		}
@@ -19,12 +20,14 @@ BaseDao.prototype.add = function(entity, entityType, callback){
 		
 	};
 BaseDao.prototype.get = function(entity, entityType, callback){
+		console.log(entity.toString() + "\n");
 		if(!(entity instanceof entityType)){
 			callback(new Response(false, "Input object is not a instance of Binding" , null));			
 		}
 		this.prepare(queryType.select, entity, entityType,callback);
 	};
 BaseDao.prototype.remove = function(entity, entityType,callback){
+		console.log(entity.toString() + "\n");
 		if(!(entity instanceof entityType)){
 			callback(new Response(false, "Input object is not a instance of Binding" , null));			
 		}
@@ -91,20 +94,24 @@ BaseDao.prototype.execute = function(statement, values, entityType, callback){
 				done();
 				console.log(err);
 				callback(new Response(false, err.message, null));
-			}
-			client.query(statement, values, function(err, result){
+			}else{
+				client.query(statement, values, function(err, result){
 				if(err){
-					
+					done();
 					console.log(err);
 					callback(new Response(false, err.message, null));
+					
+				}else{
+				
+					// console.log(result);
+					// callback(new Response(true, "",result));
 					done();
+					parseObject(result, entityType, callback);
 				}
 				
-				// console.log(result);
-				// callback(new Response(true, "",result));
-				parseObject(result, entityType, callback);
-				done();
-			});
+				});
+			}
+			
 		});
 	};
 function parseObject(data, entityType, callback){
