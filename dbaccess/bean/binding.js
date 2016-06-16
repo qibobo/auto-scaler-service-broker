@@ -1,21 +1,21 @@
 var path = require("path");
-var utils = require(path.join(__dirname,'../bean/utils.js'));
-var Response = require(path.join(__dirname,'../bean/response.js'));
-var BaseEntity = require(path.join(__dirname,'../bean/baseEntity.js'));
-var Binding = function Binding(appId, serviceId, bindingId, timestamp){
+var utils = require(path.join(__dirname, '../bean/utils.js'));
+var Response = require(path.join(__dirname, '../bean/response.js'));
+var BaseEntity = require(path.join(__dirname, '../bean/baseEntity.js'));
+var Binding = function Binding(appId, serviceId, bindingId, timestamp) {
 
-	this.appId = appId;
-	this.serviceId = serviceId;
-	this.bindingId = bindingId;
-	this.timestamp = timestamp;
+  this.appId = appId;
+  this.serviceId = serviceId;
+  this.bindingId = bindingId;
+  this.timestamp = timestamp;
 };
 /* Primary key */
 Binding.prototype.key = "bindingId";
 Binding.prototype.mapper = {
-	appId : { column : "app_id", notNull: true },
-	serviceId : { column : "service_id", notNull: true },
-	bindingId : { column : "binding_id", notNull : true },
-	timestamp : { column : "timestamp", notNull : true }
+  appId: { column: "app_id", notNull: true },
+  serviceId: { column: "service_id", notNull: true },
+  bindingId: { column: "binding_id", notNull: true },
+  timestamp: { column: "timestamp", notNull: true }
 };
 utils.extend(Binding, BaseEntity);
 // Binding.prototype.toString = function(){
@@ -40,7 +40,7 @@ utils.extend(Binding, BaseEntity);
 // 		}		
 // 	}
 // 	return new Response(true, null, null);
-	
+
 // }
 // Binding.prototype.getFieldList = function(){
 // 	var map = {};

@@ -3,8 +3,10 @@ var uuid = require('uuid');
 var path = require('path');
 var await = require('asyncawait/await');
 var Binding = require(path.join(__dirname,'../bean/binding.js'));
+var ServiceInstance = require(path.join(__dirname,'../bean/serviceInstance.js'));
 var conString = "postgres://postgres:123@127.0.0.1:5433/bindingDB";
 var BindDao = require(path.join(__dirname, '../dao/bindDao.js'));
+var serviceInstanceDao = require(path.join(__dirname, '../dao/serviceInstanceDao.js'));
 function showResult(result){
 	
 	res.writeHead(200, {'content-type': 'text/plain'});
@@ -18,18 +20,18 @@ var server = http.createServer(function(req, res) {
 	// 	res.writeHead(200, {'content-type': 'text/plain'});
  //    	res.end('count:' + JSON.stringify(data) + '\n');
 	// });
-	var dao = new BindDao(conString);
-	dao.get(new Binding(null,null,null,null),function(data){
-		res.writeHead(200, {'content-type': 'text/plain'});
-    	res.end('insert:' + JSON.stringify(data) + '\n');
-	});
+	var dao = new serviceInstanceDao(conString);
+	// dao.get(new Binding(null,null,null,null),function(data){
+	// 	res.writeHead(200, {'content-type': 'text/plain'});
+ //    	res.end('insert:' + JSON.stringify(data) + '\n');
+	// });
 	// dao.remove(new Binding(null,null,null,null),function(data){
 	// 	res.writeHead(200, {'content-type': 'text/plain'});
  //    	res.end('insert:' + JSON.stringify(data) + '\n');
 	// });
-	for(var i = 0; i <= 1000000; i++){
+	for(var i = 0; i <= 1000; i++){
 		// console.log(binding.toString());
-		dao.add(new Binding(i,i,i,2345),function(data){});
+		dao.add(new ServiceInstance(uuid.v4(),uuid.v4(),uuid.v4()),function(data){});
 	}
 	res.writeHead(200, {'content-type': 'text/plain'});
     	res.end('insert:'+'\n');

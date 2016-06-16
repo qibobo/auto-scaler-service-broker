@@ -13,7 +13,11 @@
   "scripts": {
     "start": "node index.js",
     "test-ut": "mocha test/ut --recursive",
-    "test-fat": "mocha dbaccess/test/*_test.js --recursive",
+    "test-fat": "mocha dbaccess/test/sequelize/*_test.js --recursive",
     "runFAT": "npm run start & npm run test-fat &"
+  },
+  "dependencies": {
+    "asyncawait": "^1.0.3",
+    "sequelize": "^3.23.3"
   }
 }

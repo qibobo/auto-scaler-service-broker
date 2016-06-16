@@ -1,18 +1,18 @@
 var path = require("path");
-var utils = require(path.join(__dirname,'../bean/utils.js'));
-var Response = require(path.join(__dirname,'../bean/response.js'));
-var BaseEntity = require(path.join(__dirname,'../bean/baseEntity.js'));
-var ServiceInstance = function ServiceInstance(serviceId, orgId, spaceId){
-	this.serviceId = serviceId;
-	this.orgId = orgId;
-	this.spaceId = spaceId;
+var utils = require(path.join(__dirname, '../bean/utils.js'));
+var Response = require(path.join(__dirname, '../bean/response.js'));
+var BaseEntity = require(path.join(__dirname, '../bean/baseEntity.js'));
+var ServiceInstance = function ServiceInstance(serviceId, orgId, spaceId) {
+  this.serviceId = serviceId;
+  this.orgId = orgId;
+  this.spaceId = spaceId;
 };
 /* Primary key */
 ServiceInstance.prototype.key = "serviceId";
 ServiceInstance.prototype.mapper = {
-	serviceId : { column : "service_id", notNull: true },
-	orgId : { column : "org_id", notNull: true },
-	spaceId : { column : "space_id", notNull : true }
+  serviceId: { column: "service_id", notNull: true },
+  orgId: { column: "org_id", notNull: true },
+  spaceId: { column: "space_id", notNull: true }
 };
 utils.extend(ServiceInstance, BaseEntity);
 // ServiceInstance.prototype.toString = function(){
@@ -37,7 +37,7 @@ utils.extend(ServiceInstance, BaseEntity);
 // 		}		
 // 	}
 // 	return new Response(true, null, null);
-	
+
 // }
 // ServiceInstance.prototype.getFieldList = function(){
 // 	var map = {};
